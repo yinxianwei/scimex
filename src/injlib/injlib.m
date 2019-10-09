@@ -79,7 +79,7 @@ BOOL shiftFlag;
         if(!(modifierFlags&NSEventModifierFlagCapsLock))
         {
             // 按下shift 设定flag
-            if(modifierFlags&NSEventModifierFlagShift)shiftFlag=YES;
+            if(modifierFlags&NSEventModifierFlagControl)shiftFlag=YES;
             // 松开shift
             else if(!modifierFlags&&shiftFlag)
             {
@@ -94,7 +94,7 @@ BOOL shiftFlag;
     if (type != NSEventTypeKeyDown) return NO;
 
     // shift+XX, 不是单独按下shift
-    if(modifierFlags&NSEventModifierFlagShift)shiftFlag=NO;
+    if(modifierFlags&NSEventModifierFlagControl)shiftFlag=NO;
 
     // 输入法不处理shift状态下的输入法
     if(isShift)return NO;
